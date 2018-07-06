@@ -1,4 +1,4 @@
-# nrts-prc-admin
+# nrts-prc-admin (beta)
 
 # Prerequisites
 

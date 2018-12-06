@@ -14,11 +14,12 @@ describe('CommentService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [CommentService]
-    });
-
-    service = TestBed.get(CommentService);
-    comment = new Comment({commentPeriod: commentPeriod});
+      providers: [
+        CommentService,
+        { provide: ApiService },
+        { provide: DocumentService },
+        { provide: CommentPeriodService },
+      ]
   });
 
   it('should be created', inject([CommentService], (service: CommentService) => {

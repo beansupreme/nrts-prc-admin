@@ -9,7 +9,10 @@ describe('CommentPeriodService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [CommentPeriodService]
+      providers: [
+        CommentPeriodService,
+        { provide: ApiService }
+      ]
     });
     service = TestBed.get(CommentPeriodService);
     commentPeriod = new CommentPeriod({})

@@ -25,8 +25,8 @@ describe('CommentService', () => {
     comment = new Comment({commentPeriod: commentPeriod});
   });
 
-  it('should be created', inject([CommentService], (service: CommentService) => {
-    expect(service).toBeTruthy();
+  it('should be created', inject([CommentService], (commentService: CommentService) => {
+    expect(commentService).toBeTruthy();
   }));
 
 
@@ -35,10 +35,10 @@ describe('CommentService', () => {
     it('returns "true" if the comment status is "Accepted"', () => {
       comment.commentStatus = null;
       expect(service.isAccepted(comment)).toBeFalsy();
-      
+
       comment.commentStatus = 'Pending';
       expect(service.isAccepted(comment)).toBe(false);
-      
+
       comment.commentStatus = 'Accepted';
       expect(service.isAccepted(comment)).toBe(true);
     });
@@ -48,23 +48,23 @@ describe('CommentService', () => {
     it('returns "true" if the comment status is "Pending"', () => {
       comment.commentStatus = null;
       expect(service.isPending(comment)).toBeFalsy();
-      
+
       comment.commentStatus = 'Accepted';
       expect(service.isPending(comment)).toBe(false);
-      
+
       comment.commentStatus = 'Pending';
       expect(service.isPending(comment)).toBe(true);
     });
   });
-  
+
   describe('isRejected()', () => {
     it('returns "true" if the comment status is "Rejected"', () => {
       comment.commentStatus = null;
       expect(service.isRejected(comment)).toBeFalsy();
-      
+
       comment.commentStatus = 'Accepted';
       expect(service.isRejected(comment)).toBe(false);
-      
+
       comment.commentStatus = 'Rejected';
       expect(service.isRejected(comment)).toBe(true);
     });

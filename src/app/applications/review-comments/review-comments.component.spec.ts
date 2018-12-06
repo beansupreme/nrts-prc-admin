@@ -11,7 +11,7 @@ import { ExcelService } from 'app/services/excel.service';
 import { ApiService } from 'app/services/api';
 
 @Component({selector: 'app-comment-detail', template: ''})
-class CommentDetailStubComponent { 
+class CommentDetailStubComponent {
   @Input() comment: Comment;
 }
 

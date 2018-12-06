@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { DialogService } from 'ng2-bootstrap-modal';
 
 import { ApplicationAddEditComponent } from './application-add-edit.component';
-import { FileUploadComponent } from 'app/file-upload/file-upload.component'
+import { FileUploadComponent } from 'app/file-upload/file-upload.component';
 import { RouterTestingModule } from '@angular/router/testing';
 import { MatSnackBar } from '@angular/material';
 import { ApiService } from 'app/services/api';

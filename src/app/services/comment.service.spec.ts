@@ -20,6 +20,9 @@ describe('CommentService', () => {
         { provide: DocumentService },
         { provide: CommentPeriodService },
       ]
+    });
+    service = TestBed.get(CommentService);
+    comment = new Comment({commentPeriod: commentPeriod});
   });
 
   it('should be created', inject([CommentService], (service: CommentService) => {

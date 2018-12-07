@@ -16,16 +16,16 @@ describe('CommentPeriodService', () => {
       ]
     });
     service = TestBed.get(CommentPeriodService);
-    commentPeriod = new CommentPeriod({})
+    commentPeriod = new CommentPeriod({});
   });
 
-  it('should be created', inject([CommentPeriodService], (service: CommentPeriodService) => {
-    expect(service).toBeTruthy();
+  it('should be created', inject([CommentPeriodService], (commentPeriodService: CommentPeriodService) => {
+    expect(commentPeriodService).toBeTruthy();
   }));
 
   describe('getCurrent()', () => {
     it('returns the first comment period passed', () => {
-      let secondCommentPeriod = new CommentPeriod({})
+      let secondCommentPeriod = new CommentPeriod({});
       let current = service.getCurrent([commentPeriod, secondCommentPeriod]);
       expect(current).toBe(commentPeriod);
     });
@@ -100,7 +100,7 @@ describe('CommentPeriodService', () => {
       commentPeriod.startDate = new Date('September 28, 2018 08:24:00');
       commentPeriod.endDate = new Date('December 1, 2050 16:24:00');
       expect(service.isNotOpen(commentPeriod)).toBe(false);
-      
+
       commentPeriod.endDate = null;
       expect(service.isNotOpen(commentPeriod)).toBe(true);
     });
@@ -111,7 +111,7 @@ describe('CommentPeriodService', () => {
       commentPeriod.startDate = new Date('September 28, 2018 08:24:00');
       commentPeriod.endDate = new Date('December 1, 2050 16:24:00');
       expect(service.isNotStarted(commentPeriod)).toBe(false);
-      
+
       commentPeriod.startDate = new Date('September 28, 2050 08:24:00');
       expect(service.isNotStarted(commentPeriod)).toBe(true);
     });
@@ -122,7 +122,7 @@ describe('CommentPeriodService', () => {
       commentPeriod.startDate = new Date('September 28, 2010 08:24:00');
       commentPeriod.endDate = new Date('December 1, 2010 08:24:00');
       expect(service.isOpen(commentPeriod)).toBe(false);
-      
+
       commentPeriod.endDate = new Date('December 1, 2050 16:24:00');
 
       expect(service.isOpen(commentPeriod)).toBe(true);

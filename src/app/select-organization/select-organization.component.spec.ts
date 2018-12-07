@@ -21,7 +21,7 @@ describe('SelectOrganizationComponent', () => {
     TestBed.configureTestingModule({
       declarations: [SelectOrganizationComponent],
       imports: [ NgxPaginationModule ],
-      providers: [ 
+      providers: [
         DialogService,
         { provide: SearchService, useValue: mockSearchService },
         { provide: ApiService }

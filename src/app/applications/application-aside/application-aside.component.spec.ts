@@ -21,7 +21,7 @@ describe('ApplicationAsideComponent', () => {
   const mockFeatureService = jasmine.createSpyObj('FeatureService', [
     'getByApplicationId',
     'getByTantalisId'
-  ])
+  ]);
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
